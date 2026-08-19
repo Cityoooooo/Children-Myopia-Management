@@ -67,7 +67,19 @@
                 </div>
 
                 <fieldset class="field">
-                  <legend>配合度</legend>
+                  <legend class="field-legend">
+                    配合度
+                    <button
+                      type="button"
+                      class="hint-trigger"
+                      data-hint="cooperation"
+                      aria-label="查看配合度说明"
+                      aria-expanded="false"
+                      aria-haspopup="dialog"
+                    >
+                      <img src="./assets/img/icon-info.svg" width="18" height="18" alt="">
+                    </button>
+                  </legend>
                   <div class="choice-row" role="radiogroup" aria-label="配合度">
                     <label class="choice">
                       <input type="radio" name="cooperation" value="low">
@@ -85,7 +97,19 @@
                 </fieldset>
 
                 <fieldset class="field">
-                  <legend>眼部健康</legend>
+                  <legend class="field-legend">
+                    眼部健康
+                    <button
+                      type="button"
+                      class="hint-trigger"
+                      data-hint="eyeHealth"
+                      aria-label="查看眼部健康说明"
+                      aria-expanded="false"
+                      aria-haspopup="dialog"
+                    >
+                      <img src="./assets/img/icon-info.svg" width="18" height="18" alt="">
+                    </button>
+                  </legend>
                   <div class="choice-row" role="radiogroup" aria-label="眼部健康">
                     <label class="choice">
                       <input type="radio" name="eyeHealth" value="healthy" checked>
@@ -141,6 +165,24 @@
           <footer class="disclaimer">
             本结果仅用于近视防控科普及方案理解，不构成诊断或治疗建议。具体方案需由眼科医生结合年龄、近视度数、眼轴变化、角膜及眼健康检查等情况综合评估。
           </footer>
+
+          <div class="hint-overlay" data-hint-overlay hidden>
+            <div
+              class="hint-dialog"
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="hint-title"
+              tabindex="-1"
+            >
+              <div class="hint-dialog-head">
+                <h3 id="hint-title"></h3>
+                <button type="button" class="hint-close" data-hint-close aria-label="关闭说明">
+                  <img src="./assets/img/icon-close.svg" width="18" height="18" alt="">
+                </button>
+              </div>
+              <div class="hint-dialog-body" id="hint-body"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

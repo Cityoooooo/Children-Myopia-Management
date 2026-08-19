@@ -94,6 +94,7 @@ body {
 }
 
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -173,7 +174,7 @@ body {
 }
 
 .field-head label,
-.field legend {
+.field-legend {
   font-size: 13px;
   color: var(--muted);
   font-weight: 600;
@@ -184,9 +185,40 @@ body {
   font-size: 18px;
 }
 
-.field legend {
+.field-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
   padding: 0;
   margin-bottom: 8px;
+}
+
+.hint-trigger,
+.hint-close {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hint-trigger {
+  margin: -5px 0 -5px -2px;
+}
+
+.hint-trigger:hover,
+.hint-close:hover {
+  background: var(--teal-soft);
+}
+
+.hint-trigger:focus-visible,
+.hint-close:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 1px;
 }
 
 .field {
@@ -533,6 +565,85 @@ fieldset:last-of-type .choice-row {
   color: #f3faf7;
   font-size: 11px;
   line-height: 1.55;
+}
+
+.hint-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 30;
+  display: grid;
+  place-items: center;
+  padding: 24px 18px;
+  background: rgba(22, 48, 43, 0.42);
+}
+
+.hint-overlay[hidden] {
+  display: none;
+}
+
+.app.is-hint-open .app-main {
+  overflow: hidden;
+}
+
+.hint-dialog {
+  width: min(100%, 320px);
+  max-height: calc(100% - 48px);
+  overflow: auto;
+  padding: 16px 16px 18px;
+  border-radius: 18px;
+  background: #fff;
+  box-shadow: 0 16px 40px rgba(22, 48, 43, 0.22);
+}
+
+.hint-dialog-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.hint-dialog-head h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.hint-dialog-body {
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.hint-levels {
+  display: grid;
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.hint-levels li {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.hint-level-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 24px;
+  padding: 0 2px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: var(--teal-deep);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hint-eye-text {
+  margin: 0;
 }
 
 @media (min-width: 760px) {
