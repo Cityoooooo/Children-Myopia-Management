@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>儿童近视控制方案匹配</title>
+    <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./assets/css/style.css">
+  </head>
+  <body>
+    <div class="stage">
+      <div class="phone">
+        <div class="app">
+          <header class="app-header">
+            <p class="eyebrow">近视防控科普</p>
+            <h1>儿童近视控制方案匹配</h1>
+            <p class="lead">拖动下方信息，实时查看五种常见方案的适配情况。</p>
+          </header>
+
+          <main class="app-main">
+            <section class="panel" aria-labelledby="input-title">
+              <h2 id="input-title">儿童信息输入</h2>
+              <form id="child-form" class="child-form">
+                <div class="field">
+                  <div class="field-head">
+                    <label for="age">年龄</label>
+                    <strong id="age-value">10 岁</strong>
+                  </div>
+                  <input
+                    id="age"
+                    name="age"
+                    type="range"
+                    min="6"
+                    max="18"
+                    step="1"
+                    value="10"
+                    aria-valuemin="6"
+                    aria-valuemax="18"
+                  >
+                  <div class="range-scale">
+                    <span>6 岁</span>
+                    <span>18 岁</span>
+                  </div>
+                </div>
+
+                <div class="field">
+                  <div class="field-head">
+                    <label for="diopter">近视度数</label>
+                    <strong id="diopter-value">300 度</strong>
+                  </div>
+                  <input
+                    id="diopter"
+                    name="diopter"
+                    type="range"
+                    min="50"
+                    max="1000"
+                    step="25"
+                    value="300"
+                    aria-valuemin="50"
+                    aria-valuemax="1000"
+                  >
+                  <div class="range-scale">
+                    <span>50 度</span>
+                    <span>1000 度</span>
+                  </div>
+                </div>
+
+                <fieldset class="field">
+                  <legend>配合度</legend>
+                  <div class="choice-row" role="radiogroup" aria-label="配合度">
+                    <label class="choice">
+                      <input type="radio" name="cooperation" value="low">
+                      <span>低</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="cooperation" value="medium" checked>
+                      <span>中</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="cooperation" value="high">
+                      <span>高</span>
+                    </label>
+                  </div>
+                </fieldset>
+
+                <fieldset class="field">
+                  <legend>眼部健康</legend>
+                  <div class="choice-row" role="radiogroup" aria-label="眼部健康">
+                    <label class="choice">
+                      <input type="radio" name="eyeHealth" value="healthy" checked>
+                      <span>是</span>
+                    </label>
+                    <label class="choice">
+                      <input type="radio" name="eyeHealth" value="unhealthy">
+                      <span>否</span>
+                    </label>
+                  </div>
+                </fieldset>
+              </form>
+            </section>
+
+            <section class="panel result-panel" aria-labelledby="result-title">
+              <h2 id="result-title">方案匹配结果</h2>
+              <p class="result-hint">按适配程度从高到低排列，左右滑动查看全部方案。</p>
+
+              <div
+                id="plan-carousel"
+                class="carousel"
+                tabindex="0"
+                aria-roledescription="carousel"
+                aria-label="五个近视控制方案"
+              >
+                <button
+                  type="button"
+                  class="carousel-arrow is-prev"
+                  data-carousel-prev
+                  aria-label="上一个方案"
+                >
+                  <img src="./assets/img/icon-chevron-left.svg" width="20" height="20" alt="">
+                </button>
+
+                <div class="carousel-viewport" data-carousel-viewport>
+                  <div class="carousel-track" id="plan-track" data-carousel-track></div>
+                </div>
+
+                <button
+                  type="button"
+                  class="carousel-arrow is-next"
+                  data-carousel-next
+                  aria-label="下一个方案"
+                >
+                  <img src="./assets/img/icon-chevron-right.svg" width="20" height="20" alt="">
+                </button>
+
+                <div class="carousel-dots" data-carousel-dots></div>
+              </div>
+            </section>
+          </main>
+
+          <footer class="disclaimer">
+            本结果仅用于近视防控科普及方案理解，不构成诊断或治疗建议。具体方案需由眼科医生结合年龄、近视度数、眼轴变化、角膜及眼健康检查等情况综合评估。
+          </footer>
+        </div>
+      </div>
+    </div>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "child-myopia-matcher",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "subset-font": "node scripts/subset-font.mjs",
+    "test": "node --experimental-strip-types --test scripts/matching.test.ts"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.9"
+  }
+}
