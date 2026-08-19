@@ -4,6 +4,14 @@
 
 本 Demo 仅用于近视防控科普及方案理解，不构成诊断、治疗建议或临床决策。
 
+## 在线预览
+
+浏览器直接打开：
+
+[https://cdn.jsdelivr.net/gh/Cityoooooo/Children-Myopia-Management@cursor/myopia-match-mobile-demo-1336/index.html](https://cdn.jsdelivr.net/gh/Cityoooooo/Children-Myopia-Management@cursor/myopia-match-mobile-demo-1336/index.html)
+
+建议用手机打开，或在电脑浏览器里打开开发者工具的手机预览。GitHub 仓库页面只能看源码，不会运行这个 Demo。
+
 ## 本地预览
 
 在项目根目录启动静态服务：
