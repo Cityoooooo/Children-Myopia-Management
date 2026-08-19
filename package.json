@@ -1,0 +1,9 @@
+{
+  "name": "children-myopia-management",
+  "private": true,
+  "description": "儿童近视管理方案匹配手机端 Demo",
+  "scripts": {
+    "start": "python3 -m http.server 8080",
+    "test": "node test/score.test.js"
+  }
+}
